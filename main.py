@@ -8,7 +8,7 @@ def parse_input(lines: list[str]) -> dict:
     and their league points
     """
     regex = re.compile(
-        r"(?P<teamA>[A-Za-z]*)[\s]+(?P<scoreA>[\d]+),[\s]+(?P<teamB>[A-Za-z\s]*)[\s]+(?P<scoreB>[\d]+)"
+        r"(?P<teamA>[A-Za-z\s]+)[\s]+(?P<scoreA>[\d]+),[\s]+(?P<teamB>[A-Za-z\s]+)[\s]+(?P<scoreB>[\d]+)"
     )
     scores = {}
     for line in lines:
