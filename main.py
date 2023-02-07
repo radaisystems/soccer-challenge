@@ -1,4 +1,6 @@
 import re
+import argparse
+import sys
 
 
 def parse_input(lines: list[str]) -> dict:
@@ -45,3 +47,30 @@ def format_output(ranking: dict) -> list[str]:
             place = idx + 1
         output.append(f"{place}. {team[0]}, {team[1]} pt{'s' if team[1] != 1 else ''}")
     return "\n".join(output) + "\n"
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Calculate and display a ranking table for a soccer league."
+    )
+    parser.add_argument(
+        "file",
+        nargs="?",
+        help="Input file, stdin if empty",
+        type=argparse.FileType("r"),
+        default=sys.stdin,
+    )
+    args = parser.parse_args()
+
+    if args.file.isatty():
+        # Print the help if we didn't get a file arg or anything on stdin
+        parser.print_help()
+        return 0
+
+    lines = args.file.readlines()
+    print(format_output(parse_input(lines)))
+    return 0
+
+
+if __name__ == "__main__":
+    main()
