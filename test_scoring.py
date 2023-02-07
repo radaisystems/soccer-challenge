@@ -28,6 +28,6 @@ def test_output():
     }
     expected_output = []
     with open("expected-output.txt", "r") as output_file:
-        expected_output = output_file.readlines()
+        expected_output = output_file.read()
     actual_output = main.format_output(ranking)
     assert actual_output == expected_output

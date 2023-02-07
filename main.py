@@ -43,7 +43,5 @@ def format_output(ranking: dict) -> list[str]:
     for idx, team in enumerate(ranked):
         if idx > 0 and team[1] != ranked[idx - 1][1]:
             place = idx + 1
-        output.append(
-            f"{place}. {team[0]}, {team[1]} pt{'s' if team[1] != 1 else ''}\n"
-        )
-    return output
+        output.append(f"{place}. {team[0]}, {team[1]} pt{'s' if team[1] != 1 else ''}")
+    return "\n".join(output) + "\n"
