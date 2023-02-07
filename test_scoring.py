@@ -28,6 +28,8 @@ def test_output():
     }
     expected_output = []
     with open("expected-output.txt", "r") as output_file:
-        expected_output = output_file.read()
+        # We strip the expected-output.txt string because it contains an extra
+        # newline char that will fail the test, but isn' an issue on the command line
+        expected_output = output_file.read().strip()
     actual_output = main.format_output(ranking)
     assert actual_output == expected_output
