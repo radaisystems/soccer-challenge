@@ -33,3 +33,17 @@ def parse_input(lines: list[str]) -> dict:
                 scores.setdefault(team_scores["teamB"], 0) + 1
             )
     return scores
+
+
+def format_output(ranking: dict) -> list[str]:
+    """Format the ranked teams for output"""
+    ranked = sorted(ranking.items(), key=lambda x: (-x[1], x[0]))
+    output = []
+    place = 1
+    for idx, team in enumerate(ranked):
+        if idx > 0 and team[1] != ranked[idx - 1][1]:
+            place = idx + 1
+        output.append(
+            f"{place}. {team[0]}, {team[1]} pt{'s' if team[1] != 1 else ''}\n"
+        )
+    return output
