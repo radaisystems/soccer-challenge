@@ -60,7 +60,7 @@ Please send an email back to your point of contact with:
 - the amount of time you spent on the project
 - the list of improvements you would make
 
-> You can send us the submission in the form of a tarball, zip file, or a Github link to your repository.
+> You can send us the submission in the form of a tarball or a zip file.
 
 ### Platform support
 
