@@ -15,5 +15,9 @@ points, break that tie by assigning the higher (eg, lower-ordinal) league rank t
 goal differential for the season. If there is still a tie between both league points and goal differential,
 then the assigned rank should be the same, and the teams should be sorted alphabetically, as before.
 
+In addition, we need this service to be more robust.  We should be able to upload all games results to S3 for processing.  
+
+Even further, CLI might not be sufficient for this service and we should see better operating patterns for future proofing and automation with the app.
+
 Output the end-of-season goal differential for each team to exactly match the contents of
 [goal-differential-expected-output.txt](goal-differential-expected-output.txt).
